@@ -1,14 +1,19 @@
 <template>
-  <div class="home">
-     <h1>erdi hello</h1>
-  </div>
+  
+     <appHeader />
+  
 </template>
 
 <script>
 
+import appHeader from '../components/appHeader.vue'
+
 export default {
+
   name: 'Home',
-  components: {},
+  components: {
+    appHeader,
+  },
   data() {
     return {}
   },

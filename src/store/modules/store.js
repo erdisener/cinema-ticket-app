@@ -7,13 +7,17 @@ const state = {
 
 const getters = {};
 
-const mutations = {};
+const mutations = {
+    setMovies(state, movies) {
+        state.movies = movies;
+    }
+};
 
 const actions = {
-    fetchMovies() {
-        service.fetchMovies().then((res) => {
-            console.log(res.val());
-        });
+    fetchMovies(context) {
+        service.fetchMovies().then((snapshot) => {
+            context.commit('setMovies', snapshot.val());
+        })
     }
 };
 
